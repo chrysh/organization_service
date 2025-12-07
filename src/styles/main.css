@@ -1,0 +1,242 @@
+/* src/styles/main.css */
+
+/* === 1. Global Reset & Typography === */
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Use a clean, sans-serif font for readability */
+  font-family: 'Open Sans', 'Arial', sans-serif; 
+  color: #333; /* Dark text for high contrast */
+  line-height: 1.6;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif; /* Slightly different font for headings to aid scanning */
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3em;
+  color: #2c3e50;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  color: #34495e;
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+/* === 2. Base Section Styling for Scrolling Effect === */
+
+section {
+  padding: 80px 10%; /* Ample vertical padding and side margin for white space */
+  min-height: 60vh; /* Ensures sections take up significant screen space */
+  display: flex; /* Use flexbox for centering content within sections */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.section-bg-light {
+  background-color: #f7f7ff; /* Soft off-white/light blue (Calming) */
+}
+
+.section-bg-dark {
+  background-color: #e0e6f0; /* Muted, slightly darker background for contrast between sections */
+}
+
+/* === 3. CTA Button Styling (Focus on High Contrast) === */
+
+.cta-primary {
+  background-color: #4a90e2; /* Clear, friendly blue (Primary Action) */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px 0;
+}
+.cta-primary:hover {
+  background-color: #357ae8;
+}
+
+.cta-secondary {
+  background-color: #dbe4f0; /* Light background for secondary action */
+  color: #4a90e2;
+  border: 2px solid #4a90e2;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+.cta-secondary:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* === 4. Header Specifics === */
+
+.header-section {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.tagline {
+  font-size: 1.5em;
+  font-weight: 300;
+  color: #607d8b;
+  max-width: 800px;
+}
+
+/* === 5. Layout Containers (Flex/Grid for Structure) === */
+
+.flex-container {
+  display: flex;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 30px auto;
+  text-align: left;
+  width: 100%;
+}
+
+.problem-box, .solution-box {
+  flex: 1;
+  padding: 30px;
+  border: 1px solid #c0c0c0;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.grid-container {
+  display: grid;
+  /* Responsive grid: min 300px per card */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  width: 100%;
+}
+
+.step-card, .price-card {
+  padding: 30px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  text-align: center;
+}
+
+/* Pricing Card Highlighting */
+.price-tag {
+  font-size: 2.5em;
+  color: #34495e;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.price-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.price-card li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.recommended {
+  border: 3px solid #4a90e2; /* Highlight recommended package */
+  transform: scale(1.03);
+}
+
+/* === 6. Testimonials === */
+
+.testimonial {
+  background-color: white;
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 700px;
+  border-left: 5px solid #4a90e2; /* Clear visual accent */
+  font-style: italic;
+  font-size: 1.1em;
+  text-align: left;
+}
+cite {
+    display: block;
+    margin-top: 10px;
+    text-align: right;
+    font-style: normal;
+    font-weight: bold;
+    color: #607d8b;
+}
+
+/* === 7. Footer === */
+
+.footer-section {
+  background-color: #34495e; /* Dark, non-distracting background */
+  color: #ecf0f1;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.footer-section a {
+  color: #95a5a6;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: white;
+}
+
+.social-links {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* === 8. Media Queries (Mobile Responsiveness) === */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  h2 {
+    font-size: 1.7em;
+  }
+
+  section {
+    padding: 60px 5%; /* Less side padding on small screens */
+    min-height: auto;
+  }
+  
+  .flex-container {
+    flex-direction: column; /* Stack boxes vertically on mobile */
+    gap: 20px;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr; /* Single column layout for cards */
+  }
+
+  .recommended {
+    transform: none; /* Remove scale effect on mobile */
+  }
+}
