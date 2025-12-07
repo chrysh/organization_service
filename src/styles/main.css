@@ -1,242 +1,731 @@
-/* src/styles/main.css */
+/* Import Google Fonts used in the design */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@400;600;700&display=swap');
 
-/* === 1. Global Reset & Typography === */
-
+/* === 1. Global & Reset === */
 body {
-  margin: 0;
-  padding: 0;
-  /* Use a clean, sans-serif font for readability */
-  font-family: 'Open Sans', 'Arial', sans-serif; 
-  color: #333; /* Dark text for high contrast */
-  line-height: 1.6;
-  background-color: #ffffff;
-  box-sizing: border-box;
-}
-
-h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif; /* Slightly different font for headings to aid scanning */
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 3em;
-  color: #2c3e50;
-  margin-bottom: 0.5em;
-}
-
-h2 {
-  font-size: 2em;
-  color: #34495e;
-  margin-bottom: 1.5em;
-  text-align: center;
-}
-
-/* === 2. Base Section Styling for Scrolling Effect === */
-
-section {
-  padding: 80px 10%; /* Ample vertical padding and side margin for white space */
-  min-height: 60vh; /* Ensures sections take up significant screen space */
-  display: flex; /* Use flexbox for centering content within sections */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-}
-
-.section-bg-light {
-  background-color: #f7f7ff; /* Soft off-white/light blue (Calming) */
-}
-
-.section-bg-dark {
-  background-color: #e0e6f0; /* Muted, slightly darker background for contrast between sections */
-}
-
-/* === 3. CTA Button Styling (Focus on High Contrast) === */
-
-.cta-primary {
-  background-color: #4a90e2; /* Clear, friendly blue (Primary Action) */
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1em;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  margin: 20px 0;
-}
-.cta-primary:hover {
-  background-color: #357ae8;
-}
-
-.cta-secondary {
-  background-color: #dbe4f0; /* Light background for secondary action */
-  color: #4a90e2;
-  border: 2px solid #4a90e2;
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: all 0.3s;
-  text-decoration: none;
-  display: inline-block;
-}
-.cta-secondary:hover {
-  background-color: #4a90e2;
-  color: white;
-}
-
-/* === 4. Header Specifics === */
-
-.header-section {
-  min-height: 100vh;
-  background-color: #ffffff;
-}
-
-.tagline {
-  font-size: 1.5em;
-  font-weight: 300;
-  color: #607d8b;
-  max-width: 800px;
-}
-
-/* === 5. Layout Containers (Flex/Grid for Structure) === */
-
-.flex-container {
-  display: flex;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 30px auto;
-  text-align: left;
-  width: 100%;
-}
-
-.problem-box, .solution-box {
-  flex: 1;
-  padding: 30px;
-  border: 1px solid #c0c0c0;
-  border-radius: 8px;
-  background-color: white;
-}
-
-.grid-container {
-  display: grid;
-  /* Responsive grid: min 300px per card */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 30px;
-  max-width: 1200px;
-  margin: 30px auto;
-  width: 100%;
-}
-
-.step-card, .price-card {
-  padding: 30px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  text-align: center;
-}
-
-/* Pricing Card Highlighting */
-.price-tag {
-  font-size: 2.5em;
-  color: #34495e;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.price-card ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
-    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.price-card li {
-    padding: 5px 0;
-    border-bottom: 1px dashed #eee;
+/* === 2. Header Section (Hero) === */
+.header-gamified {
+    min-height: 100vh;
+    padding: 0; /* Remove default padding for full background control */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Contains the swirling background */
+    
+    /* Simulate the Swirling Background from the design */
+    background: radial-gradient(circle at 50% 50%, #f0f7ff 10%, #e8f0ff 40%, #d8e6ff 80%);
+    /* Adding complex, colourful swirl effect using overlapping gradients for visual interest */
+    background-image: linear-gradient(135deg, rgba(179, 136, 235, 0.2) 25%, transparent 25%), 
+                      linear-gradient(225deg, rgba(255, 171, 64, 0.2) 25%, transparent 25%), 
+                      linear-gradient(Depamine45deg, rgba(64, 203, 255, 0.2) 25%, transparent 25%), 
+                      linear-gradient(315deg, rgba(121, 235, 136, 0.2) 25%, #ffffff 25%);
+    background-size: contain;
+    background-repeat: no-repeat; 
 }
 
-.recommended {
-  border: 3px solid #4a90e2; /* Highlight recommended package */
-  transform: scale(1.03);
+/* === 3. Navigation Bar === */
+.nav-bar-gamified {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: transparent; /* Seamless with background */
+    z-index: 100; /* Ensure nav is on top */
 }
 
-/* === 6. Testimonials === */
-
-.testimonial {
-  background-color: white;
-  margin: 30px auto;
-  padding: 25px;
-  max-width: 700px;
-  border-left: 5px solid #4a90e2; /* Clear visual accent */
-  font-style: italic;
-  font-size: 1.1em;
-  text-align: left;
+.logo-section {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #4a90e2;
 }
-cite {
-    display: block;
-    margin-top: 10px;
-    text-align: right;
-    font-style: normal;
-    font-weight: bold;
-    color: #607d8b;
+.brain-icon {
+    font-size: 1.2em;
+    margin-right: 5px;
 }
 
-/* === 7. Footer === */
+/* Quest Buttons */
+.nav-quests {
+    display: flex;
+    gap: 15px;
+}
+.quest-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.quest-btn:hover {
+    transform: translateY(-2px);
+}
+.blue-quest { background-color: #4ac; }
+.purple-quest { background-color: #8c7; }
+.green-quest { background-color: #6a5; }
 
-.footer-section {
-  background-color: #34495e; /* Dark, non-distracting background */
-  color: #ecf0f1;
-  padding: 40px 10%;
-  text-align: center;
+/* Currency Button (Nierons) */
+.currency-btn {
+    background-color: #ff5e3a;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: 600;
 }
 
-.footer-section a {
-  color: #95a5a6;
-  text-decoration: none;
-  margin: 0 15px;
-  transition: color 0.3s;
+/* === 4. Hero Content and Graphics === */
+.hero-content-gamified {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    padding-top: 50px;
+    position: relative;
 }
 
-.footer-section a:hover {
-  color: white;
+/* Text Block */
+.text-block {
+    text-align: left;
+    max-width: 450px;
+}
+.text-block h1 {
+    font-size: 3.5em;
+    color: #4a90e2; /* Blue to match the design */
+    line-height: 1.1;
+    margin-bottom: 0.2em;
+}
+.tagline {
+    font-size: 1.4em;
+    font-weight: 400;
+    color: #555;
 }
 
-.social-links {
-    margin-top: 15px;
+/* Graphics Container (Simulated Visual Layout) */
+.graphics-container {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    /* This simulates the main graphical cloud of icons */
+    /* In a real project, this would be an SVG or high-res image */
+    background: url('path-to-your-illustration.png') no-repeat center center;
+    background-size: contain;
+}
+
+/* Circular Call-to-Action */
+.circular-cta {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ff5e3a; /* Bright Orange CTA */
+    color: white;
+    border: 5px solid white;
+    box-shadow: 0 0 0 8px rgba(255, 94, 58, 0.4); /* Glow effect */
+    font-size: 1.3em;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 10; 
+}
+.circular-cta:hover {
+    transform: translate(0, -50%) scale(1.05);
+}
+
+/* Icon Group (Placing simulated icons) */
+.icon-group {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 3em; /* Emojis look better large */
+    z-index: 5;
+}
+.book-stack { position: absolute; bottom: 15%; left: 35%; font-size: 5em; }
+.timer-big { position: absolute; top: 30%; left: 55%; font-size: 3em; }
+.brain-small { position: absolute; top: 10%; left: 45%; font-size: 2em; }
+.rocket { position: absolute; top: 15%; right: 20%; font-size: 4em; }
+
+
+/* === 5. Motivation Meter === */
+.motivation-meter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 5%;
+    margin-top: auto; /* Pushes it to the bottom */
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.meter-icon {
+    font-size: 1.5em;
+}
+
+.meter-bar {
+    width: 250px;
+    height: 10px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+.meter-fill {
+    height: 100%;
+    width: 60%; /* Example: 60% motivation */
+    background: linear-gradient(90deg, #d8e6ff, #99aaff, #8c7); /* Gradient fill */
+    border-radius: 5px;
+}
+
+.meter-label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* === Media Queries (Responsiveness) === */
+@media (max-width: 900px) {
+    .hero-content-gamified {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text-block {
+        order: 2; /* Move text below graphics */
+        margin-top: 50px;
+    }
+    .graphics-container {
+        width: 350px;
+        height: 350px;
+        order: 1;
+    }
+    .circular-cta {
+        top: 50%;
+        right: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 140px;
+        height: 140px;
+        font-size: 1.1em;
+    }
+    .nav-bar-gamified {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-quests {
+        order: 3;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Update this section in your main.css */
+
+.step-icon-svg {
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    /* Optional: Add a subtle bounce on hover */
+    transition: transform 0.3s;
+}
+
+.step-card:hover .step-icon-svg {
+    transform: scale(1.1);
+}
+
+.floating-trophy {
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    /* Ensure the trophy is large enough */
+    width: 70px; 
+    height: 70px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    animation: float 3s ease-in-out infinite;
+    z-index: 10;
+}
+
+/* === Pricing Section Specifics === */
+
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 5%;
+}
+
+/* The Main Purple/White Container */
+.pricing-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allows stacking on mobile */
+    background-color: #f4f6fc; /* Soft periwinkle background */
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* --- Left Side Content --- */
+.pricing-left {
+    flex: 1;
+    min-width: 250px;
+}
+
+.pricing-left h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.pricing-left h3 {
+    font-size: 1.2rem;
+    color: #555;
     margin-bottom: 15px;
 }
 
-/* === 8. Media Queries (Mobile Responsiveness) === */
+.value-list {
+    list-style: none;
+    padding: 0;
+}
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em;
-  }
+.value-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #666;
+    line-height: 1.5;
+}
 
-  h2 {
-    font-size: 1.7em;
-  }
+.value-list li::before {
+    content: '•';
+    color: #4a90e2; /* Bullet color */
+    font-weight: bold;
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
 
-  section {
-    padding: 60px 5%; /* Less side padding on small screens */
-    min-height: auto;
-  }
-  
-  .flex-container {
-    flex-direction: column; /* Stack boxes vertically on mobile */
+/* --- Right Side Grid --- */
+.pricing-right {
+    flex: 2;
+    position: relative;
+}
+
+/* Floating Trophy Icon */
+.floating-trophy {
+    position: absolute;
+    top: -30px;
+    right: -20px;
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Step Cards (Top Row) */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.step-label {
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 600;
+}
+
+.step-name {
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Pricing Packages (Bottom Row) */
+.packages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Recommended card is slightly wider */
     gap: 20px;
-  }
-  
-  .grid-container {
-    grid-template-columns: 1fr; /* Single column layout for cards */
-  }
+    align-items: stretch;
+}
 
-  .recommended {
-    transform: none; /* Remove scale effect on mobile */
-  }
+.package-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.pkg-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.pkg-duration {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.pkg-desc {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.pkg-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #333;
+    margin-top: auto;
+}
+
+/* === The Recommended Card Glow === */
+.recommended-card {
+    border: 2px solid #a855f7; /* Purple border */
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); /* Purple glow */
+}
+
+.badge-recommended {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #ff7e5f; /* Orange Badge */
+    color: white;
+    font-size: 0.6rem;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+/* --- Bottom Button --- */
+.pricing-cta-container {
+    margin-top: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.cta-wide {
+    width: 100%;
+    max-width: 400px;
+    padding: 18px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    background-color: #4a90e2;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+    .pricing-wrapper {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr; /* Stack steps vertically on mobile */
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr; /* Stack prices vertically */
+    }
+    
+    .pricing-left {
+        text-align: center;
+    }
+    
+    .pricing-left h2 {
+        text-align: center;
+    }
+
+    .value-list li {
+        text-align: left;
+    }
+}
+
+/* === Victories (Before/After) Section === */
+
+.victories-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 5%;
+}
+
+.victories-wrapper {
+    background-color: #f4f6fc; /* Matches Pricing Background */
+    border-radius: 20px;
+    padding: 50px;
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.victories-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.victories-header h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.victories-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.icon-badge {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    animation: bounce 2s infinite;
+}
+
+/* Grid Layout */
+.victories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* Individual Victory Card */
+.victory-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 2px solid #eef2f9; /* Subtle border */
+    transition: transform 0.2s;
+}
+
+.victory-card:hover {
+    transform: translateY(-5px);
+    border-color: #dbe4f0;
+}
+
+/* Card Header */
+.victory-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px dashed #f0f0f0;
+}
+
+.victory-card-header h3 {
+    margin: 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.location-tag {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.xp-badge {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Comparison Area */
+.comparison-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+}
+
+.image-box {
+    flex: 1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4/3; /* Enforce standard photo ratio */
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.image-box:hover img {
+    transform: scale(1.05);
+}
+
+/* Labels */
+.label-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.before-label {
+    background-color: rgba(50, 50, 50, 0.7);
+    color: white;
+}
+
+.after-label {
+    background-color: #4caf50; /* Green for Success */
+    color: white;
+}
+
+/* Flow Arrow */
+.flow-arrow {
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    font-weight: bold;
+}
+
+/* Card Footer */
+.victory-footer {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+    color: #ff9800; /* Gold/Orange */
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg); /* Point down on mobile */
+        margin: 10px 0;
+    }
+    
+    .victories-wrapper {
+        padding: 30px 20px;
+    }
+}
+
+/* In your main.css - Locate the .carousel-btn style block */
+.carousel-btn {
+    /* Set opacity high, ensure high z-index */
+    z-index: 20; /* Increased Z-index to be safe */
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    
+    /* Make the button background a strong, visible color */
+    background-color: rgba(74, 144, 226, 0.9); /* Use the Depamine Blue, semi-transparent */
+    color: white; 
+    
+    /* Add padding/size if the font is too small */
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    
+    /* Add a small white border for extra contrast */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(74, 144, 226, 1.0); /* Full opacity on hover */
+}
+
+/* In your main.css - Check Positioning */
+.left-arrow {
+    left: 10px; /* Moves it 10px in from the left edge */
+}
+
+.right-arrow {
+    right: 10px; /* Moves it 10px in from the right edge */
 }

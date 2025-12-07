@@ -1,23 +1,21 @@
 import React from 'react';
 import Header from './components/Header.tsx';
-import ProblemSolution from './components/ProblemSolution.tsx';
-import HowItWorks from './components/HowItWorks.tsx';
-import UniqueValue from './components/UniqueValue.tsx';
 import Pricing from './components/Pricing.tsx';
-import Testimonials from './components/Testimonials.tsx';
-import Footer from './components/Footer.tsx';
+import Victories from './components/Victories.tsx';
+import './styles/main.css';
 
 // Define App as a Function Component (FC)
 const App: React.FC = () => {
   return (
     <div className="landing-page-container">
+      {/* The main focus is the visually engaging header/hero section */}
       <Header />
-      <ProblemSolution />
-      <HowItWorks />
-      <UniqueValue />
+      {/*<Quests />*/}
       <Pricing />
-      <Testimonials />
-      <Footer />
+      <Victories />
+      {/* Placeholder for the rest of your scrolling page components */}
+      {/* <ProblemSolution /> */}
+      {/* ...etc. */}
     </div>
   );
 };

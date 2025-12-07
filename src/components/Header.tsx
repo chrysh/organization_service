@@ -1,42 +1,68 @@
 import React from 'react';
-import '../styles/main.css';
 
 const Header: React.FC = () => {
   return (
-    // 1. Full-screen header section
-    <header className="header-section header-anchor">
+    <header className="header-section header-gamified">
       
-      {/* Navigation Bar (Fixed at the top, optional) */}
-      <nav className="nav-bar">
-        <span className="logo">Dopamine Declutter</span>
-        <div className="nav-links">
-          <a href="#pricing">Pricing</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#testimonials">Reviews</a>
+      {/* Top Navigation Bar */}
+      <nav className="nav-bar-gamified">
+        <div className="logo-section">
+          <span className="brain-icon">🧠</span> 
+          <span className="logo-text">Neuro-Organize</span>
         </div>
+        
+        {/* Navigation Quest Buttons */}
+        <div className="nav-quests">
+          <button className="quest-btn blue-quest">Quests</button>
+          <button className="quest-btn purple-quest">Toolbox</button>
+          <button className="quest-btn green-quest">Victories</button>
+        </div>
+
+        {/* Cart/Nierons (Gamified Currency) */}
+        <button className="currency-btn orange-currency">
+          🛒 Nierons
+        </button>
       </nav>
 
-      {/* 2. Hero Content (Centered) */}
-      <div className="header-content">
-        {/* H1: Strong, direct, benefit-focused headline */}
-        <h1>Finally, a Home System That Works With Your Brain.</h1>
+      {/* Main Hero Content and Graphics Area */}
+      <div className="hero-content-gamified">
         
-        {/* Sub-headline: Location and specific focus */}
-        <p className="tagline">
-          Stop fighting clutter paralysis. Start building sustainable **NeuroFlow Systems** in your Zurich home.
-        </p>
-        
-        {/* CTA: Large, primary action */}
-        <button className="cta-primary cta-large">
-          Book Your Sensory Audit & Start Flow Today
-        </button>
-      </div>
-      
-      {/* Optional: Add a subtle visual cue for scrolling */}
-      <div className="scroll-indicator">
-        <a href="#problem-solution">Scroll to Learn More ↓</a>
+        {/* Text Block */}
+        <div className="text-block">
+          <h1>Declutter with Dopamine</h1>
+          <p className="tagline">
+            Spark Joy & Focus: Your Brain's Best Friend for a Tidy Space!
+          </p>
+        </div>
+
+        {/* Graphics Container (Simulated Illustration) */}
+        <div className="graphics-container">
+          
+          {/* Circular Call-to-Action */}
+          <button className="circular-cta">
+            Start Your Flow Quest!
+          </button>
+          
+          {/* Graphics (Simplified representation of the scattered icons) */}
+          <div className="icon-group">
+            {/* These labels are placeholders for the complex background illustration */}
+            <span className="icon-item book-stack">📚</span>
+            <span className="icon-item timer-big">⏱️</span>
+            <span className="icon-item brain-small">🧠</span>
+            <span className="icon-item rocket">🚀</span>
+          </div>
+        </div>
       </div>
 
+      {/* Motivation Meter (Bottom Anchor) */}
+      <div className="motivation-meter-container">
+        <span className="meter-icon">🧠</span>
+        <div className="meter-bar">
+          <div className="meter-fill"></div>
+        </div>
+        <span className="meter-label">Motivation Meter</span>
+      </div>
+      
     </header>
   );
 };
